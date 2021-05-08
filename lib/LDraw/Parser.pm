@@ -210,7 +210,7 @@ sub parse_sub_file_reference {
     my $det = mat4determinant($mat);
     my $invert = $self->invert;
     $self->DEBUG('FILE: %s BEFORE det[%d], invert[%d] _invertnext[%d]', $subpart_filename, $det, $invert, $self->{_invertnext});
-    if ($det < 0) {
+    if ($det <= 0) {
         $invert = 1;
     }
     if ($self->{_invertnext}) {
